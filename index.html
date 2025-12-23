@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KinoVision | Кинотеатр нового поколения</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Верхняя навигационная панель -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="language-selector">
+                    <span class="active">RU</span>
+                    <span>EN</span>
+                    <span>MD</span>
+                </div>
+                <div class="top-links">
+                    <a href="#"><i class="far fa-newspaper"></i> Новости</a>
+                    <a href="#"><i class="fas fa-gift"></i> Акции</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> Помощь</a>
+                    <a href="#" class="login-btn"><i class="far fa-user"></i> Войти</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Главная навигация -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Kino<span>Vision</span></h1>
+                        <p>Кинотеатр нового поколения</p>
+                    </div>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="#now-playing" class="nav-link active"><i class="fas fa-play-circle"></i> Сейчас в кино</a></li>
+                        <li><a href="#coming-soon" class="nav-link"><i class="far fa-clock"></i> Скоро</a></li>
+                        <li><a href="#cinemas" class="nav-link"><i class="fas fa-video"></i> Кинозалы</a></li>
+                        <li><a href="#prices" class="nav-link"><i class="fas fa-tags"></i> Цены</a></li>
+                        <li><a href="#events" class="nav-link"><i class="fas fa-calendar-star"></i> События</a></li>
+                        <li><a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> О нас</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="btn-ticket">
+                        <i class="fas fa-ticket-alt"></i> Купить билет
+                    </button>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Блок выбора фильма -->
+    <section class="movie-selector">
+        <div class="container">
+            <div class="selector-container">
+                <h2 class="selector-title">Выберите фильм для просмотра</h2>
+                
+                <div class="selector-filters">
+                    <div class="filter-group">
+                        <label for="date-select"><i class="far fa-calendar"></i> Выберите дату</label>
+                        <select id="date-select" class="styled-select">
+                            <option>23 декабря, понедельник</option>
+                            <option>24 декабря, вторник</option>
+                            <option>25 декабря, среда</option>
+                            <option>26 декабря, четверг</option>
+                            <option>27 декабря, пятница</option>
+                            <option>28 декабря, суббота</option>
+                            <option>29 декабря, воскресенье</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="cinema-select"><i class="fas fa-building"></i> Выберите кинотеатр</label>
+                        <select id="cinema-select" class="styled-select">
+                            <option>KinoVision Центр</option>
+                            <option>KinoVision Молл</option>
+                            <option>KinoVision Плаза</option>
+                            <option>KinoVision Парк</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="movie-select"><i class="fas fa-film"></i> Выберите фильм</label>
+                        <select id="movie-select" class="styled-select">
+                            <option>Все фильмы</option>
+                            <option>Аватар: Огонь и пепел</option>
+                            <option>Джуманджи: Новый уровень</option>
+                            <option>Форсаж 10</option>
+                            <option>Человек-паук: Через вселенные</option>
+                            <option>Оппенгеймер</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="time-select"><i class="far fa-clock"></i> Выберите время</label>
+                        <select id="time-select" class="styled-select">
+                            <option>Любое время</option>
+                            <option>10:00 - 13:00</option>
+                            <option>13:00 - 16:00</option>
+                            <option>16:00 - 19:00</option>
+                            <option>19:00 - 22:00</option>
+                            <option>22:00 - 01:00</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn-find">
+                        <i class="fas fa-search"></i> Найти сеансы
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Фильмы в прокате -->
+    <section class="movies-section" id="now-playing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-icon"><i class="fas fa-play-circle"></i></span>
+                    Сейчас в кино
+                </h2>
+                <div class="section-controls">
+                    <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            
+            <div class="movies-grid">
+                <div class="movie-card">
+                    <div class="movie-badge">НОВИНКА</div>
+                    <div class="movie-poster">
+                        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Аватар">
+                        <div class="movie-overlay">
+                            <button class="btn-trailer"><i class="fas fa-play"></i> Трейлер</button>
+                            <button class="btn-book">Купить билет</button>
+                        </div>
+                    </div>
+                    <div class="movie-info">
+                        <h3 class="movie-title">Аватар: Огонь и пепел</h3>
+                        <div class="movie-meta">
+                            <span class="meta-item"><i class="far fa-clock"></i> 192 мин</span>
+                            <span class="meta-item"><i class="fas fa-user-friends"></i> 12+</span>
+                            <span class="meta-item format-3d">3D</span>
+                        </div>
+                        <p class="movie-description">Продолжение эпической саги о планете Пандора и её обитателях.</p>
+                        <div class="movie-showtimes">
+                            <span class="showtime">10:30</span>
+                            <span class="showtime">13:45</span>
+                            <span class="showtime">16:20</span>
+                            <span class="showtime">19:00</span>
+                            <span class="showtime">21:30</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="movie-card">
+                    <div class="movie-badge popular">ПОПУЛЯРНОЕ</div>
+                    <div class="movie-poster">
+                        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Оппенгеймер">
+                        <div class="movie-overlay">
+                            <button class="btn-trailer"><i class="fas fa-play"></i> Трейлер</button>
+                            <button class="btn-book">Купить билет</button>
+                        </div>
+                    </div>
+                    <div class="movie-info">
+                        <h3 class="movie-title">Оппенгеймер</h3>
+                        <div class="movie-meta">
+                            <span class="meta-item"><i class="far fa-clock"></i> 180 мин</span>
+                            <span class="meta-item"><i class="fas fa-user-friends"></i> 16+</span>
+                            <span class="meta-item format-2d">2D</span>
+                        </div>
+                        <p class="movie-description">История создания атомной бомбы глазами Роберта Оппенгеймера.</p>
+                        <div class="movie-showtimes">
+                            <span class="showtime">11:00</span>
+                            <span class="showtime">14:30</span>
+                            <span class="showtime">18:00</span>
+                            <span class="showtime">21:15</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="movie-card">
+                    <div class="movie-badge">НОВИНКА</div>
+                    <div class="movie-poster">
+                        <img src="https://images.unsplash.com/photo-1635805737707-575885ab0820?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Человек-паук">
+                        <div class="movie-overlay">
+                            <button class="btn-trailer"><i class="fas fa-play"></i> Трейлер</button>
+                            <button class="btn-book">Купить билет</button>
+                        </div>
+                    </div>
+                    <div class="movie-info">
+                        <h3 class="movie-title">Человек-паук: Через вселенные</h3>
+                        <div class="movie-meta">
+                            <span class="meta-item"><i class="far fa-clock"></i> 140 мин</span>
+                            <span class="meta-item"><i class="fas fa-user-friends"></i> 12+</span>
+                            <span class="meta-item format-3d">3D</span>
+                        </div>
+                        <p class="movie-description">Майлз Моралес путешествует по мультивселенной Человеков-пауков.</p>
+                        <div class="movie-showtimes">
+                            <span class="showtime">10:00</span>
+                            <span class="showtime">12:45</span>
+                            <span class="showtime">15:30</span>
+                            <span class="showtime">18:15</span>
+                            <span class="showtime">21:00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="https://images.unsplash.com/photo-1595769812725-4c6564f7135f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Форсаж">
+                        <div class="movie-overlay">
+                            <button class="btn-trailer"><i class="fas fa-play"></i> Трейлер</button>
+                            <button class="btn-book">Купить билет</button>
+                        </div>
+                    </div>
+                    <div class="movie-info">
+                        <h3 class="movie-title">Форсаж 10</h3>
+                        <div class="movie-meta">
+                            <span class="meta-item"><i class="far fa-clock"></i> 141 мин</span>
+                            <span class="meta-item"><i class="fas fa-user-friends"></i> 16+</span>
+                            <span class="meta-item format-2d">2D</span>
+                        </div>
+                        <p class="movie-description">Доминик Торетто и его команда в новом опасном приключении.</p>
+                        <div class="movie-showtimes">
+                            <span class="showtime">13:00</span>
+                            <span class="showtime">16:45</span>
+                            <span class="showtime">20:30</span>
+                            <span class="showtime">23:15</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Скоро в кино -->
+    <section class="coming-soon-section" id="coming-soon">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-icon"><i class="far fa-clock"></i></span>
+                    Скоро в кино
+                </h2>
+                <a href="#" class="view-all">Смотреть все <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="coming-soon-grid">
+                <div class="coming-card">
+                    <div class="coming-date">29 ДЕКАБРЯ</div>
+                    <div class="coming-poster">
+                        <img src="https://images.unsplash.com/photo-1531259683007-016a7b628fc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Годзилла">
+                    </div>
+                    <div class="coming-info">
+                        <h3 class="coming-title">Годзилла и Конг</h3>
+                        <div class="coming-meta">
+                            <span class="meta-badge">Боевик</span>
+                            <span class="meta-badge">Фантастика</span>
+                        </div>
+                        <p class="coming-description">Новая битва титанов, которая определит судьбу мира.</p>
+                        <button class="btn-notify"><i class="far fa-bell"></i> Уведомить</button>
+                    </div>
+                </div>
+                
+                <div class="coming-card">
+                    <div class="coming-date">5 ЯНВАРЯ</div>
+                    <div class="coming-poster">
+                        <img src="https://images.unsplash.com/photo-1551029506-0807df4e2031?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Миссия">
+                    </div>
+                    <div class="coming-info">
+                        <h3 class="coming-title">Миссия невыполнима 8</h3>
+                        <div class="coming-meta">
+                            <span class="meta-badge">Боевик</span>
+                            <span class="meta-badge">Триллер</span>
+                        </div>
+                        <p class="coming-description">Итан Хант в самой опасной миссии своей жизни.</p>
+                        <button class="btn-notify"><i class="far fa-bell"></i> Уведомить</button>
+                    </div>
+                </div>
+                
+                <div class="coming-card">
+                    <div class="coming-date">12 ЯНВАРЯ</div>
+                    <div class="coming-poster">
+                        <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Дюна">
+                    </div>
+                    <div class="coming-info">
+                        <h3 class="coming-title">Дюна: Часть вторая</h3>
+                        <div class="coming-meta">
+                            <span class="meta-badge">Фантастика</span>
+                            <span class="meta-badge">Драма</span>
+                        </div>
+                        <p class="coming-description">Продолжение эпического путешествия Пола Атрейдеса.</p>
+                        <button class="btn-notify"><i class="far fa-bell"></i> Уведомить</button>
+                    </div>
+                </div>
+                
+                <div class="coming-card">
+                    <div class="coming-date">19 ЯНВАРЯ</div>
+                    <div class="coming-poster">
+                        <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Бэтмен">
+                    </div>
+                    <div class="coming-info">
+                        <h3 class="coming-title">Бэтмен 2</h3>
+                        <div class="coming-meta">
+                            <span class="meta-badge">Боевик</span>
+                            <span class="meta-badge">Детектив</span>
+                        </div>
+                        <p class="coming-description">Брюс Уэйн сталкивается с новыми угрозами для Готэма.</p>
+                        <button class="btn-notify"><i class="far fa-bell"></i> Уведомить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Кинозалы -->
+    <section class="cinemas-section" id="cinemas">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-icon"><i class="fas fa-video"></i></span>
+                    Наши кинозалы
+                </h2>
+                <p class="section-subtitle">Современные технологии и максимальный комфорт</p>
+            </div>
+            
+            <div class="cinemas-grid">
+                <div class="cinema-card">
+                    <div class="cinema-image">
+                        <img src="https://images.unsplash.com/photo-1489599809516-9827b6d1cf13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="IMAX зал">
+                        <div class="cinema-label">IMAX</div>
+                    </div>
+                    <div class="cinema-info">
+                        <h3>IMAX с лазерной проекцией</h3>
+                        <p>Гигантский экран и революционная система звука для полного погружения.</p>
+                        <ul class="cinema-features">
+                            <li><i class="fas fa-check"></i> Экран 24×13 метров</li>
+                            <li><i class="fas fa-check"></i> 12-канальный звук</li>
+                            <li><i class="fas fa-check"></i> 4K лазерная проекция</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="cinema-card">
+                    <div class="cinema-image">
+                        <img src="https://images.unsplash.com/photo-1564507004663-b6dfb3e2ede5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="VIP зал">
+                        <div class="cinema-label">VIP</div>
+                    </div>
+                    <div class="cinema-info">
+                        <h3>VIP зал премиум-класса</h3>
+                        <p>Эксклюзивные кожаные кресла с подогревом и индивидуальным обслуживанием.</p>
+                        <ul class="cinema-features">
+                            <li><i class="fas fa-check"></i> Кресла с массажем</li>
+                            <li><i class="fas fa-check"></i> Личный кинобар</li>
+                            <li><i class="fas fa-check"></i> Ограниченная рассадка</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="cinema-card">
+                    <div class="cinema-image">
+                        <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="3D зал">
+                        <div class="cinema-label">3D</div>
+                    </div>
+                    <div class="cinema-info">
+                        <h3>3D зал с Dolby Atmos</h3>
+                        <p>Объемный звук и стереоскопическое изображение для максимального эффекта присутствия.</p>
+                        <ul class="cinema-features">
+                            <li><i class="fas fa-check"></i> Активные 3D очки</li>
+                            <li><i class="fas fa-check"></i> Dolby Atmos звук</li>
+                            <li><i class="fas fa-check"></i> Высокая частота кадров</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Цены -->
+    <section class="prices-section" id="prices">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-icon"><i class="fas fa-tags"></i></span>
+                    Цены и акции
+                </h2>
+                <p class="section-subtitle">Специальные предложения для наших гостей</p>
+            </div>
+            
+            <div class="prices-grid">
+                <div class="price-card">
+                    <div class="price-header">
+                        <h3>Стандарт</h3>
+                        <div class="price-amount">400 <span>₽</span></div>
+                        <p class="price-description">Базовый билет</p>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> Просмотр фильма</li>
+                        <li><i class="fas fa-check"></i> Стандартное место</li>
+                        <li><i class="fas fa-times"></i> 3D очки</li>
+                        <li><i class="fas fa-times"></i> Напиток</li>
+                    </ul>
+                    <button class="btn-price">Выбрать</button>
+                </div>
+                
+                <div class="price-card popular">
+                    <div class="popular-badge">ВЫГОДНО</div>
+                    <div class="price-header">
+                        <h3>Комфорт</h3>
+                        <div class="price-amount">600 <span>₽</span></div>
+                        <p class="price-description">Лучшее предложение</p>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> Просмотр фильма</li>
+                        <li><i class="fas fa-check"></i> Комфортное место</li>
+                        <li><i class="fas fa-check"></i> 3D очки</li>
+                        <li><i class="fas fa-check"></i> Напиток в подарок</li>
+                    </ul>
+                    <button class="btn-price primary">Выбрать</button>
+                </div>
+                
+                <div class="price-card">
+                    <div class="price-header">
+                        <h3>VIP</h3>
+                        <div class="price-amount">1200 <span>₽</span></div>
+                        <p class="price-description">Максимум комфорта</p>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> Просмотр фильма</li>
+                        <li><i class="fas fa-check"></i> VIP место</li>
+                        <li><i class="fas fa-check"></i> Премиум 3D очки</li>
+                        <li><i class="fas fa-check"></i> Напиток + закуска</li>
+                    </ul>
+                    <button class="btn-price">Выбрать</button>
+                </div>
+            </div>
+            
+            <div class="promotions">
+                <h3 class="promotions-title">Специальные акции</h3>
+                <div class="promotions-grid">
+                    <div class="promotion-card">
+                        <div class="promotion-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Скидка 20% для групп</h4>
+                        <p>При покупке от 5 билетов на один сеанс</p>
+                    </div>
+                    
+                    <div class="promotion-card">
+                        <div class="promotion-icon">
+                            <i class="far fa-clock"></i>
+                        </div>
+                        <h4>Утренние сеансы</h4>
+                        <p>Билеты со скидкой 30% до 14:00</p>
+                    </div>
+                    
+                    <div class="promotion-card">
+                        <div class="promotion-icon">
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                        <h4>День рождения</h4>
+                        <p>Бесплатный билет в день рождения</p>
+                    </div>
+                    
+                    <div class="promotion-card">
+                        <div class="promotion-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h4>Карта киномана</h4>
+                        <p>Накопительная система скидок</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Команда -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-icon"><i class="fas fa-users"></i></span>
+                    Наша команда
+                </h2>
+                <p class="section-subtitle">Профессионалы, которые создают ваш кинематографический опыт</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Директор">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-vk"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Александр Иванов</h3>
+                        <p class="team-position">Генеральный директор</p>
+                        <p class="team-bio">Более 15 лет в киноиндустрии. Специалист по организации киносетей.</p>
+                        <div class="team-contact">
+                            <span><i class="far fa-envelope"></i> a.ivanov@kinovision.ru</span>
+                            <span><i class="fas fa-phone"></i> +7 (495) 123-45-67</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Программный директор">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-vk"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Мария Смирнова</h3>
+                        <p class="team-position">Программный директор</p>
+                        <p class="team-bio">Отвечает за подбор фильмов и формирование программы кинотеатра.</p>
+                        <div class="team-contact">
+                            <span><i class="far fa-envelope"></i> m.smirnova@kinovision.ru</span>
+                            <span><i class="fas fa-phone"></i> +7 (495) 123-45-68</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Технический директор">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-vk"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Дмитрий Петров</h3>
+                        <p class="team-position">Технический директор</p>
+                        <p class="team-bio">Эксперт по кинооборудованию и системам звука.</p>
+                        <div class="team-contact">
+                            <span><i class="far fa-envelope"></i> d.petrov@kinovision.ru</span>
+                            <span><i class="fas fa-phone"></i> +7 (495) 123-45-69</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Менеджер по обслуживанию">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-vk"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Анна Козлова</h3>
+                        <p class="team-position">Менеджер по обслуживанию</p>
+                        <p class="team-bio">Обеспечивает высочайший уровень сервиса для наших гостей.</p>
+                        <div class="team-contact">
+                            <span><i class="far fa-envelope"></i> a.kozlova@kinovision.ru</span>
+                            <span><i class="fas fa-phone"></i> +7 (495) 123-45-70</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-logo">
+                        <div class="logo">
+                            <i class="fas fa-film"></i>
+                            <div class="logo-text">
+                                <h2>Kino<span>Vision</span></h2>
+                                <p>Кинотеатр нового поколения</p>
+                            </div>
+                        </div>
+                        <p class="footer-description">
+                            Мы создаем незабываемые кинематографические впечатления с использованием передовых технологий и максимального комфорта.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <div class="link-group">
+                            <h4>Кинотеатр</h4>
+                            <a href="#now-playing">Сейчас в кино</a>
+                            <a href="#coming-soon">Скоро в кино</a>
+                            <a href="#cinemas">Кинозалы</a>
+                            <a href="#prices">Цены</a>
+                            <a href="#team">Команда</a>
+                        </div>
+                        
+                        <div class="link-group">
+                            <h4>Информация</h4>
+                            <a href="#">Новости</a>
+                            <a href="#">Акции</a>
+                            <a href="#">Правила</a>
+                            <a href="#">FAQ</a>
+                            <a href="#">Контакты</a>
+                        </div>
+                        
+                        <div class="link-group">
+                            <h4>Услуги</h4>
+                            <a href="#">Корпоративы</a>
+                            <a href="#">Дни рождения</a>
+                            <a href="#">Частный показ</a>
+                            <a href="#">VR зона</a>
+                            <a href="#">Кинобар</a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-contact">
+                        <h4>Контакты</h4>
+                        <div class="contact-info">
+                            <p><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Кинематографическая, 15</p>
+                            <p><i class="fas fa-phone-alt"></i> +7 (495) 123-45-67</p>
+                            <p><i class="far fa-envelope"></i> info@kinovision.ru</p>
+                            <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 01:00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2024 KinoVision. Все права защищены.</p>
+                    <div class="footer-payments">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                        <i class="fab fa-cc-apple-pay"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- В HTML добавить: -->
+<section class="booking-section" id="booking">
+    <div class="container">
+        <div class="booking-flow">
+            <!-- Шаг 1: Выбор места -->
+            <div class="booking-step active">
+                <h3><span class="step-number">1</span> Выбор места</h3>
+                <div class="cinema-layout">
+                    <div class="screen">ЭКРАН</div>
+                    <div class="seats-grid" id="seatsGrid">
+                        <!-- Динамически генерируемые места -->
+                    </div>
+                    <div class="seat-legend">
+                        <div class="legend-item"><span class="seat free"></span> Свободно</div>
+                        <div class="legend-item"><span class="seat selected"></span> Выбрано</div>
+                        <div class="legend-item"><span class="seat occupied"></span> Занято</div>
+                        <div class="legend-item"><span class="seat vip"></span> VIP</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Шаг 2: Оплата -->
+            <div class="booking-step">
+                <h3><span class="step-number">2</span> Оплата</h3>
+                <div class="payment-options">
+                    <div class="payment-method active">
+                        <i class="fab fa-cc-visa"></i> Банковская карта
+                    </div>
+                    <div class="payment-method">
+                        <i class="fas fa-mobile-alt"></i> Apple Pay/Google Pay
+                    </div>
+                    <div class="payment-method">
+                        <i class="fas fa-qrcode"></i> QR-код
+                    </div>
+                </div>
+                <form class="payment-form">
+                    <!-- Форма оплаты -->
+                </form>
+            </div>
+            
+            <!-- Шаг 3: Подтверждение -->
+            <div class="booking-step">
+                <h3><span class="step-number">3</span> Подтверждение</h3>
+                <div class="ticket-confirm">
+                    <div class="ticket-preview">
+                        <!-- Предпросмотр билета -->
+                    </div>
+                    <button class="btn-download-ticket">
+                        <i class="fas fa-download"></i> Скачать билет
+                    </button>
+                    <button class="btn-send-email">
+                        <i class="fas fa-envelope"></i> Отправить на email
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- В HTML добавить: -->
+<section class="corporate-section">
+    <div class="container">
+        <h2 class="section-title">Корпоративные мероприятия</h2>
+        
+        <div class="corporate-services">
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Корпоратив">
+                </div>
+                <div class="service-info">
+                    <h3>Корпоративный показ</h3>
+                    <p>Аренда зала для корпоративного мероприятия</p>
+                    <ul class="service-features">
+                        <li>Полностью приватный зал</li>
+                        <li>Выбор фильма из каталога</li>
+                        <li>Кейтеринг от ресторана</li>
+                        <li>Персональный менеджер</li>
+                    </ul>
+                    <button class="btn-request">Запросить расчет</button>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="День рождения">
+                </div>
+                <div class="service-info">
+                    <h3>День рождения</h3>
+                    <p>Организация праздника в кинотеатре</p>
+                    <ul class="service-features">
+                        <li>Тематическое оформление</li>
+                        <li>Торт и напитки</li>
+                        <li>Фотозона и аниматор</li>
+                        <li>Подарки для гостей</li>
+                    </ul>
+                    <button class="btn-request">Забронировать</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
